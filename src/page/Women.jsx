@@ -1,6 +1,7 @@
 import React from 'react'
 import CategoryCard from '../component/women/CategoryCard'
 import { images } from '../component/images'
+import Sort from '../component/sort/Sort'
 
 const Women = () => {
   return (
@@ -21,17 +22,26 @@ const Women = () => {
             categoryName={"Activewears"}/>
 
             <CategoryCard
-            categoryImg={images.womenSuit}
-            categoryName={"Suitings"}/>
+            categoryImg={images.womenBottom}
+            categoryName={"Bottoms"}/>
 
             <CategoryCard
             categoryImg={images.womenUnderwear}
             categoryName={"Underwears"}/>
         </section>
-        <section className='grid grid-cols-4'>
+        
+        <section>
+        <div className='mb-5'>
+          <Sort/>
+        </div>
+        <div className='grid grid-cols-4 space-x-2'>
           <div className='col-span-1'>
 
           </div>
+          <div className='col-span-3'>
+
+          </div>
+        </div>
         </section>
     </div>
   )

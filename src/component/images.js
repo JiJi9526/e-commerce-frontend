@@ -23,6 +23,7 @@ import womendress from '../assets/womenDress.webp';
 import womenactivewear from '../assets/womenActivewear.jpg';
 import womenSuit from '../assets/womenSuit.webp';
 import womenUnderwear from '../assets/womenUnderwear.webp';
+import womenBottom from '../assets/womenBottom.jpg';
 
 export const images = {
     bag,
@@ -50,4 +51,5 @@ export const images = {
     womenactivewear,
     womenSuit,
     womenUnderwear,
+    womenBottom,
 };
