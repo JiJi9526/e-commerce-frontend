@@ -2,9 +2,11 @@ import React from 'react'
 import CategoryCard from '../component/women/CategoryCard'
 import { images } from '../component/images'
 import Sort from '../component/sort/Sort'
+import Product from '../component/product/Product'
 
 const Women = () => {
   return (
+    <div>
     <div className='max-w-1360px mx-auto'>
         <p className='text-sm'>Women</p>
         <p className='text-2xl font-medium my-3'>Women's Clothing</p>
@@ -29,17 +31,15 @@ const Women = () => {
             categoryImg={images.womenUnderwear}
             categoryName={"Underwears"}/>
         </section>
-        
+        </div>
         <section>
-        <div className='mb-5'>
+        <div className='py-5 mb-3 max-w-1360px mx-auto'>
           <Sort/>
         </div>
-        <div className='grid grid-cols-4 space-x-2'>
-          <div className='col-span-1'>
-
-          </div>
-          <div className='col-span-3'>
-
+      
+        <div className=''>
+          <div className=''>
+            <Product />
           </div>
         </div>
         </section>

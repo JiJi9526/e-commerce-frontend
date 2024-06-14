@@ -4,14 +4,14 @@ const Sort = () => {
   return (
     <div>
         <div className="flex justify-end">
-                <div className="flex-col flex">
+                <div className="space-x-2">
                     <label
-                        className="text-[#929292] text-xs ml-3 my-auto"
+                        className="text-[#929292] text-xs  my-auto"
                     >
                         Sort By
                     </label>
                     <select
-                        className="bg-transparent focus:outline-none px-2  text-sm tracking-tighter"
+                        className="bg-transparent focus:outline-none rounded-full border border-gray-300 hover:border-gray-700 px-3 py-2  text-sm tracking-tighter"
                         name="sort"
                         id="sort"
                     >
