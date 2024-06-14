@@ -16,7 +16,7 @@ const Women = () => {
             categoryName={"Tops"}/>
 
             <CategoryCard
-            categoryImg={images.womendress}
+            categoryImg={images.womenDress}
             categoryName={"Dresses"}/>
 
             <CategoryCard
