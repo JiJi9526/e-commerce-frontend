@@ -30,15 +30,23 @@ import womenUnderwear from '../assets/womenUnderwear.webp';
 import womenUnderwear1 from '../assets/womenUnderwear1.webp';
 import womenUnderwear2 from '../assets/womenUnderwear2.webp';
 import womenUnderwear3 from '../assets/womenUnderwear3.webp';
+import womenUnderwear4 from '../assets/womenUnderwear4.webp';
+import womemUnderwear5 from '../assets/womenUnderwear5.webp';
+import womenUnderwear6 from '../assets/womenUnderwear6.webp';
 import womenBottom from '../assets/womenBottom.jpg';
 import cancel from '../assets/cancel.png';
 import menUnderwear1 from '../assets/menUnderwear1.jpg';
 import menUnderwear2 from '../assets/menUnderwear2.jpg';
+import menUnderwear3 from '../assets/menUnderwear3.webp';
+import menUnderwear4 from '../assets/menUnderwear4.webp';
+import menTop from '../assets/menTop.webp';
 import menTop1 from '../assets/menTop1.webp';
 import menOutwear from '../assets/menOutwear.webp';
+import menBottom from '../assets/menBottom.webp';
 import menBottom1 from '../assets/menBottom1.webp';
 import menSuit1 from '../assets/menSuit1.webp';
 import menSwim1 from '../assets/menSwim1.webp';
+import menActivewear from '../assets/menActivewear.webp';
 import menActivewear1 from '../assets/menActivewear1.webp';
 
 export const images = {
@@ -75,13 +83,21 @@ export const images = {
     womenUnderwear1,
     womenUnderwear2,
     womenUnderwear3,
+    womenUnderwear4,
+    womemUnderwear5,
+    womenUnderwear6,
     womenBottom,
     menUnderwear1,
     menUnderwear2,
+    menUnderwear3,
+    menUnderwear4,
+    menTop,
     menTop1,
     menOutwear,
+    menBottom,
     menBottom1,
     menSuit1,
     menSwim1,
+    menActivewear,
     menActivewear1,
 };

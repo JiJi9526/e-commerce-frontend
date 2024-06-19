@@ -1,14 +1,12 @@
 import React, { useState } from 'react'
-import { images } from '../component/images'
 import Sort from '../component/sort/Sort'
 import ProductCard from '../component/productCard/ProductCard'
+import { images } from '../component/images'
 import CategoryCard from '../component/category/CategoryCard'
-import Sidebar from '../component/sidebar/Sidebar'
 
-const Women = () => {
+const Men = () => {
   const [sortOrder, setSortOrder] = useState('Featured');
   const [category, setCategory] = useState('');
-  const [isOpen, setIsOpen] = useState(false);
 
   const handleSortChange = (order) => {
     setSortOrder(order);
@@ -17,40 +15,36 @@ const Women = () => {
   const handleCategoryChange = (categoryName) => {
     setCategory(categoryName);
   }
-
-  const toggleSidebar = () => {
-    setIsOpen(!isOpen);
-  }
   return (
     <div>
       <div className='max-w-1360px mx-auto'>
-        <p className='text-sm'>Women</p>
-        <p className='text-2xl font-medium my-3'>Women's Clothing</p>
+        <p className='text-sm'>Men</p>
+        <p className='text-2xl font-medium my-3'>Men's Clothing</p>
         <section className='flex justify-between py-3'>
           <CategoryCard
-            categoryImg={images.womentop}
+            categoryImg={images.menTop}
             categoryName="Tops"
             onClick={() => handleCategoryChange("Tops")} />
 
           <CategoryCard
-            categoryImg={images.womenDress}
-            categoryName="Dresses"
-            onClick={() => handleCategoryChange("Dresses")} />
-
-          <CategoryCard
-            categoryImg={images.womenactivewear}
+            categoryImg={images.menActivewear}
             categoryName={"Activewears"}
             onClick={() => handleCategoryChange("Activewear")} />
 
           <CategoryCard
-            categoryImg={images.womenBottom}
+            categoryImg={images.menBottom}
             categoryName={"Bottoms"}
             onClick={() => handleCategoryChange("Bottoms")} />
 
           <CategoryCard
-            categoryImg={images.womenUnderwear} n
+            categoryImg={images.menUnderwear2} n
             categoryName={"Underwears"}
             onClick={() => handleCategoryChange("Underwear")} />
+
+          <CategoryCard
+            categoryImg={images.men1}
+            categoryName={"Outerwear"}
+            onClick={() => handleCategoryChange("Outerwear")} />
         </section>
       </div>
       <section>
@@ -60,13 +54,12 @@ const Women = () => {
 
         <div className=''>
           <div className=''>
-            <ProductCard sortOrder={sortOrder} gender={"women"} />
+            <ProductCard sortOrder={sortOrder} gender={"men"} />
           </div>
         </div>
       </section>
-      {/* <Sidebar isOpen={isOpen} gender={"women"} onClose={toggleSidebar} onCategorySelect={handleCategoryChange}/> */}
     </div>
   )
 }
 
-export default Women
+export default Men

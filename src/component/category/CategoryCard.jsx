@@ -1,13 +1,10 @@
 import React from 'react'
-import { Link } from "react-router-dom";
 
-const CategoryCard = ({categoryImg,categoryName}) => {
+const CategoryCard = ({categoryImg,categoryName, onClick}) => {
   return (
-    <div className=' relative'>
-        <Link>
+    <div onClick={onClick} className=' relative cursor-pointer'>
             <img src={categoryImg} alt="" className='rounded-md h-[360px] w-[265px]'/>
             <p className='absolute left-4 bottom-4 text-white text-xs tracking-wide font-semibold'>{categoryName}</p>
-        </Link>
     </div>
   )
 }

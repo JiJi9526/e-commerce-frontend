@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Sort = () => {
+const Sort = ({ onSortChange }) => {
   return (
     <div>
         <div className="flex justify-end">
@@ -14,6 +14,7 @@ const Sort = () => {
                         className="bg-transparent focus:outline-none rounded-full border border-gray-300 hover:border-gray-700 px-3 py-2  text-sm tracking-tighter"
                         name="sort"
                         id="sort"
+                        onChange={(e) => onSortChange(e.target.value)}
                     >
                         <option value="Featured">Featured</option>
                         <option value="LowToHigh">Price Low to High</option>

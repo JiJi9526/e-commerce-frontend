@@ -4,6 +4,10 @@ import Home from '../../page/Home'
 import Header from '../header/Header'
 import Footer from '../footer/Footer'
 import Women from '../../page/Women'
+import LogIn from '../../page/LogIn'
+import Men from '../../page/Men'
+import Underwear from '../../page/Underwear'
+import ProductDetail from '../../page/ProductDetail'
 
 const Router = () => {
   return (
@@ -13,6 +17,10 @@ const Router = () => {
             <Routes>
                 <Route path='/' element={<Home/>}/>
                 <Route path='/women' element={<Women/>}/>
+                <Route path='/men' element={<Men/>}/>
+                <Route path='/underwear' element={<Underwear/>}/>
+                <Route path='/detail' element={<ProductDetail/>}/>
+                <Route path='/register' element={<LogIn/>}/>
             </Routes>
           <Footer/>
         </BrowserRouter>
