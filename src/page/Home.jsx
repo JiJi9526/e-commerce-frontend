@@ -64,4 +64,6 @@ const Home = () => {
   )
 }
 
+// home page
+
 export default Home
