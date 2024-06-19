@@ -8,6 +8,7 @@ const Home = () => {
   const menItems = ['Swim', 'Outerwear', 'Top', 'Bottom'];
   const items = category === 'women' ? womenItems : menItems;
   return (
+    <>
     <main className='bg-orange-50'>
       <div className='space-y-2'>
         <section className='grid grid-cols-3 space-x-2 '>
@@ -61,6 +62,7 @@ const Home = () => {
         </div>
       </div>
     </main>
+    </>
   )
 }
 

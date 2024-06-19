@@ -2,6 +2,7 @@ import React, { useRef, useState } from 'react'
 import { Link, useNavigate } from "react-router-dom";
 import { images } from "../images";
 import Sidebar from '../sidebar/Sidebar';
+import { Cart } from '../cart/Cart';
 import ProductCard from '../productCard/ProductCard';
 
 const Header = () => {
@@ -9,6 +10,8 @@ const Header = () => {
     const [activeCategory, setActiveCategory] = useState('');
     const [dropdownOpen, setDropdownOpen] = useState(false);
     const [activeUserSidebar, setActiveUserSidebar] = useState('');
+
+    const [rightSidebarOpen, setRightSidebarOpen] = useState(false);
     const navigate = useNavigate();
 
     const handleCategoryClick = (gender) => {
@@ -34,6 +37,9 @@ const Header = () => {
         setActiveCategory('');
     };
 
+    const handleRightSideBar = () => {
+        setRightSidebarOpen(!rightSidebarOpen);
+    }
     return (
         <div className=' hover:bg-white'>
             <div className='max-w-1360px py-5 mx-auto flex justify-between'>
@@ -62,10 +68,11 @@ const Header = () => {
                         )}
                     </div>
 
-                    <img src={images.cart} alt="" className='size-6 cursor-pointer' />
+                    <img src={images.cart} alt="" className='size-6 cursor-pointer' onClick={() => setRightSidebarOpen(!rightSidebarOpen)} />
                 </div>
 
             </div>
+            <Cart rightSidebarOpen={rightSidebarOpen} setRightSidebarOpen={setRightSidebarOpen} />
             <Sidebar isOpen={sidebarOpen} gender={activeCategory} onClose={closeSidebar} />
             {/* <ProductCard category={selectedCategory} gender={activeCategory} sortOrder=""/> */}
         </div>
