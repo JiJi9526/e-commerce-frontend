@@ -34,7 +34,6 @@ export const Cart = ({rightSidebarOpen, setRightSidebarOpen}) => {
             <input className='w-full my-4 py-4 rounded-md text-center hover:bg-slate-200 placeholder-black' type="text" placeholder="Review + Checkout" />
             <p className='text-center'>Shipping & Taxes Calculated at Checkout</p>
         </div>
-
     </div>
   )
 }

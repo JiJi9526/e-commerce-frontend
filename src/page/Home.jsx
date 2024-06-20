@@ -2,14 +2,14 @@ import React, { useEffect, useState } from 'react'
 import { images } from '../component/images'
 import { Link } from "react-router-dom";
 
-const Home = () => {
+const Home = ({ rightSidebarOpen }) => {
   const [category, setCategory] = useState('women');
   const womenItems = ['Swim', 'Outerwear', 'Top', 'Bottom'];
   const menItems = ['Swim', 'Outerwear', 'Top', 'Bottom'];
   const items = category === 'women' ? womenItems : menItems;
   return (
     <>
-    <main className='bg-orange-50'>
+    <main className={`bg-orange-50 transition-opacity duration-500 ${rightSidebarOpen ? 'opacity-50' : 'opacity-100'}`}>
       <div className='space-y-2'>
         <section className='grid grid-cols-3 space-x-2 '>
           <div className=' col-span-2'>
