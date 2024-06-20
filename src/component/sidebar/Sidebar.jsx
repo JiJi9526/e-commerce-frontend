@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import axios from 'axios';
 
 const Sidebar = ({ isOpen, gender, onClose }) => {
-    const [subcategories, setSubcategories] = useState([]);
+    const [categories, setCategories] = useState([]);
 
     useEffect(() => {
         const getCategory = async () => {
@@ -26,7 +26,7 @@ const Sidebar = ({ isOpen, gender, onClose }) => {
                     default:
                         filteredCategories = [];
                 }
-                setSubcategories(filteredCategories);
+                setCategories(filteredCategories);
             } catch (error) {
                 console.log(error);
             }
@@ -72,21 +72,21 @@ const Sidebar = ({ isOpen, gender, onClose }) => {
                 </div>
                 <Link to={`/${gender}`} className="text-sm font-semibold capitalize" onClick={() => onCategorySelect(null)}>Shop {gender}</Link>
                 <div className='flex justify-between'>
-                    {/* <ul className="space-y-6 pt-8">
-                        {subcategories.map((sub, id) => (
+                    <ul className="space-y-6 pt-8">
+                        {categories.map((cate, id) => (
                             <li key={id} className="hover:underline flex items-center text-3xl text-neutral-400 hover:text-white"
-                                onMouseEnter={() => setHoveredSubcategory(sub)}
+                                onMouseEnter={() => setHoveredSubcategory(cate)}
                                 onMouseLeave={() => setHoveredSubcategory(null)}
-                                onClick={() => onCategorySelect(sub.id)}>{sub.name}
-                                {/* <Link to={`/${gender}`} onClick={() => onCategorySelect(sub.name)}>{sub.name}</Link> */}
-                            {/* </li> */}
-                        {/* ))} */}
-                    {/* </ul> */}
+                                onClick={() => onCategorySelect(cate.id)}>
+                                <Link to={`/${gender}`}>{cate.name}</Link>
+                            </li>
+                        ))}
+                    </ul>
                     {/* <div className="w-2/3  flex px-10 items-center justify-center transition-opacity duration-300">
-                    {hoveredSubcategory && (
-                        <img src={hoveredSubcategory.image} alt={hoveredSubcategory.name} className="w-full h-[460px] object-cover" />
-                    )}
-                </div> */}
+                        {hoveredSubcategory && (
+                            <img src={hoveredSubcategory.image} alt={hoveredSubcategory.name} className="w-full h-[460px] object-cover" />
+                        )}
+                    </div> */}
                 </div>
             </div>
 

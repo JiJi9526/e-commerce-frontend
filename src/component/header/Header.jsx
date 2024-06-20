@@ -47,8 +47,6 @@ const Header = () => {
                     <button onClick={() => handleCategoryClick('women')} className={`hover:border-b transition-all ${activeCategory === 'women' ? 'border-b' : ''}`}>Women</button>
 
                     <button onClick={() => handleCategoryClick('men')} className={`hover:border-b transition-all ${activeCategory === 'men' ? 'border-b' : ''}`}>Men</button>
-
-                    {/* <button onClick={() => handleCategoryClick('underwear')} className={`hover:border-b transition-all ${activeCategory === 'underwear' ? 'border-b' : ''}`}>Underwear</button> */}
                 </div>
                 <div className='text-xl font-medium pr-20 tracking-wide'>
                     <Link to="/">Calvin Klein</Link>
@@ -70,11 +68,9 @@ const Header = () => {
 
                     <img src={images.cart} alt="" className='size-6 cursor-pointer' onClick={() => setRightSidebarOpen(!rightSidebarOpen)} />
                 </div>
-
             </div>
             <Cart rightSidebarOpen={rightSidebarOpen} setRightSidebarOpen={setRightSidebarOpen} />
             <Sidebar isOpen={sidebarOpen} gender={activeCategory} onClose={closeSidebar} />
-            {/* <ProductCard category={selectedCategory} gender={activeCategory} sortOrder=""/> */}
         </div>
     )
 }   

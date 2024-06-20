@@ -2,7 +2,9 @@ import React from 'react'
 
 const ProductDetail = () => {
   return (
-    <div></div>
+    <div className='max-w-1360px mx-auto'>
+
+    </div>
   )
 }
 

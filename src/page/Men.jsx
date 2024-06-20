@@ -54,7 +54,7 @@ const Men = () => {
 
         <div className=''>
           <div className=''>
-            <ProductCard sortOrder={sortOrder} gender={"men"} />
+            <ProductCard sortOrder={sortOrder} gender={"men"} category={category}/>
           </div>
         </div>
       </section>

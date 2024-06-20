@@ -8,7 +8,6 @@ import Sidebar from '../component/sidebar/Sidebar'
 const Women = () => {
   const [sortOrder, setSortOrder] = useState('Featured');
   const [category, setCategory] = useState('');
-  const [isOpen, setIsOpen] = useState(false);
 
   const handleSortChange = (order) => {
     setSortOrder(order);
@@ -18,9 +17,6 @@ const Women = () => {
     setCategory(categoryName);
   }
 
-  const toggleSidebar = () => {
-    setIsOpen(!isOpen);
-  }
   return (
     <div>
       <div className='max-w-1360px mx-auto'>
@@ -60,11 +56,10 @@ const Women = () => {
 
         <div className=''>
           <div className=''>
-            <ProductCard sortOrder={sortOrder} gender={"women"} />
+            <ProductCard sortOrder={sortOrder} gender={"women"} category={category}/>
           </div>
         </div>
       </section>
-      {/* <Sidebar isOpen={isOpen} gender={"women"} onClose={toggleSidebar} onCategorySelect={handleCategoryChange}/> */}
     </div>
   )
 }
