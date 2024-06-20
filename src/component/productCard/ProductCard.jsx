@@ -47,9 +47,13 @@ const ProductCard = ({ category, sortOrder, gender }) => {
     <div className='grid grid-cols-4 gap-1'>
       {filteredProducts.map((group, id) => (
         <div className='productCard' key={id}>
-          <Link to={"/detail"}><img src={group.product.imageUrl} alt="" className="w-96 h-[490px]" /></Link>
+          <Link to={`/products/${group.product.id}`}>
+            <img src={group.product.imageUrl} alt="" className="w-96 h-[490px]" />
+            </Link>
           <div className='p-4'>
-            <Link className='text-neutral-500 text-xs font-semibold '>{group.product.name}</Link>
+            <Link className='text-neutral-500 text-xs font-semibold ' to={`/products/${group.product.id}`}>
+              {group.product.name}
+              </Link>
             <p className='text-sm py-1'>${group.product.price}.00</p>
             <div className="flex space-x-2 mt-2">
               <div className='size-4 hover outline-1 outline-neutral-400 hover cursor-pointer rounded-full border-2'
