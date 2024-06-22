@@ -8,6 +8,7 @@ import LogIn from '../../page/LogIn'
 import Men from '../../page/Men'
 import Underwear from '../../page/Underwear'
 import ProductDetail from '../../page/ProductDetail'
+import Review from '../../page/Review'
 
 const Router = () => {
   return (
@@ -21,6 +22,7 @@ const Router = () => {
                 <Route path='/underwear' element={<Underwear/>}/>
                 <Route path='/products/:id' element={<ProductDetail/>}/>
                 <Route path='/register' element={<LogIn/>}/>
+                <Route path='/review' element={<Review/>}/>
             </Routes>
           <Footer/>
         </BrowserRouter>
