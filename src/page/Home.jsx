@@ -32,16 +32,16 @@ const Home = () => {
         </section>
         <section className='relative'>
           <Link><img src={images.underwear} alt="" className='w-full hover:brightness-75' /></Link>
-          <div className='absolute bottom-7 left-9'>
+          {/* <div className='absolute bottom-7 left-9'>
             <p className="text-5xl pb-5">Bestselling Underwear</p>
               <a href="" className='mr-7 border-b border-gray-200 hover:border-black'>Shop Women</a>
               <a href="" className='border-b border-gray-200 hover:border-black'>Shop Men</a>
-          </div>
+          </div> */}
         </section>
       </div>
-      <div className='flex items-center justify-center py-24'>
+      {/* <div className='flex items-center justify-center py-24'> */}
         <div className='text-center'>
-          <div className='mb-6 text-lg'>
+          {/* <div className='mb-6 text-lg'>
             <button
               onClick={() => setCategory('women')}
               className={`mr-6 focus:underline  ${category === 'women' ? 'text-black' : 'text-gray-500'}`}>
@@ -58,8 +58,8 @@ const Home = () => {
             {items.map((item, index) => (
               <li key={index} className="text-5xl font-normal"><button className='hover:underline'>{item}</button></li>
             ))}
-          </ul>
-        </div>
+          </ul> */}
+        {/* </div> */}
       </div>
     </main>
     </>

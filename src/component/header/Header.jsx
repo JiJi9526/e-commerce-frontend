@@ -1,17 +1,17 @@
-import React, { useRef, useState } from 'react'
+import React, { useContext,useRef, useState } from 'react'
 import { Link, useNavigate } from "react-router-dom";
 import { images } from "../images";
 import Sidebar from '../sidebar/Sidebar';
 import { Cart } from '../cart/Cart';
 import ProductCard from '../productCard/ProductCard';
+import { CartContext } from '../cardContext/CartContext';
 
 const Header = () => {
     const [sidebarOpen, setSidebarOpen] = useState(false);
     const [activeCategory, setActiveCategory] = useState('');
     const [dropdownOpen, setDropdownOpen] = useState(false);
     const [activeUserSidebar, setActiveUserSidebar] = useState('');
-
-    const [rightSidebarOpen, setRightSidebarOpen] = useState(false);
+    const {toggleCart} = useContext(CartContext);
     const navigate = useNavigate();
 
     const handleCategoryClick = (gender) => {
@@ -66,10 +66,10 @@ const Header = () => {
                         )}
                     </div>
 
-                    <img src={images.cart} alt="" className='size-6 cursor-pointer' onClick={() => setRightSidebarOpen(!rightSidebarOpen)} />
+                    <img src={images.cart} alt="" className='size-6 cursor-pointer' onClick={toggleCart} />
                 </div>
             </div>
-            <Cart rightSidebarOpen={rightSidebarOpen} setRightSidebarOpen={setRightSidebarOpen} />
+            <Cart  />
             <Sidebar isOpen={sidebarOpen} gender={activeCategory} onClose={closeSidebar} />
         </div>
     )

@@ -72,7 +72,7 @@ const Sidebar = ({ isOpen, gender, onClose }) => {
                 </div>
                 <Link to={`/${gender}`} className="text-sm font-semibold capitalize" onClick={() => onCategorySelect(null)}>Shop {gender}</Link>
                 <div className='flex justify-between'>
-                    <ul className="space-y-6 pt-8">
+                    {/* <ul className="space-y-6 pt-8">
                         {categories.map((cate, id) => (
                             <li key={id} className="hover:underline flex items-center text-3xl text-neutral-400 hover:text-white"
                                 onMouseEnter={() => setHoveredSubcategory(cate)}
@@ -81,7 +81,7 @@ const Sidebar = ({ isOpen, gender, onClose }) => {
                                 <Link to={`/${gender}`}>{cate.name}</Link>
                             </li>
                         ))}
-                    </ul>
+                    </ul> */}
                     {/* <div className="w-2/3  flex px-10 items-center justify-center transition-opacity duration-300">
                         {hoveredSubcategory && (
                             <img src={hoveredSubcategory.image} alt={hoveredSubcategory.name} className="w-full h-[460px] object-cover" />

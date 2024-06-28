@@ -1,17 +1,14 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { images } from '../component/images'
 import axios from 'axios';
+import { CartContext } from '../component/cardContext/CartContext';
 
 const ProductDetail = () => {
   const {id} = useParams();
   const [product, setProduct] = useState(null);
-  const [selectedColor, setSelectedColor] = useState('Black');
-  const [selectedSize, setSelectedSize] = useState('');
   const [quantity, setQuantity] = useState(1);
-
-  const colors = ['Black', 'White']
-  const sizes = ['XS', 'S', 'M', 'L', 'XL'];
+  const { addToCart } = useContext(CartContext);
 
   console.log(id);
 
@@ -29,17 +26,17 @@ const ProductDetail = () => {
     
   },[id]);
 
-  const handleColorClick = (color) => {
-    setSelectedColor(color);
-  }
-
-  const handleSizeClick = (size) => {
-    setSelectedSize(size);
-  }
-
   const handleQuantityChange = (e) => {
     setQuantity(e.target.value);
   };
+
+  const handleAddToBag = () => {
+    const item = {
+      ...product,
+      quantity : parseInt(quantity),
+    };
+    addToCart(item);
+  }
 
   if(!product){
     return <div>Loading...</div>
@@ -47,7 +44,7 @@ const ProductDetail = () => {
   return (
     <div className='max-w-1360px mx-auto'>
       <div className='py-5'>
-        <Link to={"/women"} className='hover:border-b hover:text-black border-black text-neutral-600 text-sm'>Women</Link>
+        {/* <Link to={"/women"} className='hover:border-b hover:text-black border-black text-neutral-600 text-sm'>Women</Link> */}
         <div className='grid grid-cols-3 gap-x-2 py-3'>
           <div className='col-span-2 flex gap-x-4'>
             <img src={product.imageUrl} alt="" className='w-[430px] h-[560px]' />
@@ -58,37 +55,43 @@ const ProductDetail = () => {
             <p className='font-medium'>${product.price}</p>
             <div className='py-4'>
               <p className='text-sm text-neutral-600 pb-5'>Color
-                <span className='font-medium pl-2 text-black'>{selectedColor}</span>
+                <span className='font-medium pl-2 text-black'>{product.color}</span>
               </p>
-              {colors.map((color) => (
                 <button
-                  key={color}
-                  onClick={() => handleColorClick(color)}
-                  className={`size-8 rounded-full mr-6 border-2 hover:outline outline-1 outline-offset-2 ${selectedColor === color ? 'outline outline-black' : 'border-gray-300'}`}
-                  style={{ backgroundColor: color === 'Black' ? '#000' : '#f5f5f5' }} />
-              ))}
+                  className={`size-8 rounded-full mr-6 border-2 outline-1 outline-offset-2  outline outline-black`}
+                  style={{ backgroundColor: product.color }} />
             </div>
 
             <div>
-              <p className='text-sm text-neutral-600'>Select Size</p>
+              <p className='text-sm text-neutral-600'>Size : {product.size}</p>
               <div className="grid grid-cols-4 gap-3">
-                {sizes.map((size) => (
                   <button
-                    key={size}
-                    onClick={() => handleSizeClick(size)}
-                    className={`py-4 text-center rounded-sm border hover:border-black mt-2 ${selectedSize === size ? 'bg-black text-white' : 'bg-white text-black border-gray-300'}`}
+                    className={`py-4 text-center rounded-sm border border-black mt-2`}
                   >
-                    {size}
+                    {product.size}
                   </button>
-                ))}
               </div>
             </div>
             <p className='text-sm py-3 underline-offset-4 font-medium underline'>About the {product.name}</p>
             <p className='text-xl'>{product.description}</p>
 
-            <div className=" ">
+            <div className="grid grid-cols-3 gap-x-4 pt-2">
+            <div className='py-1 border px-5 flex-col flex col-span-1'>
+              <label htmlFor='quantity' className='text-sm pb-2 '>Qty</label>
+              <select
+                id='quantity'
+                value={quantity}
+                onChange={handleQuantityChange}
+                className='outline-none'
+              >
+                {[...Array(10).keys()].map(num => (
+                  <option key={num + 1} value={num + 1}>{num + 1}</option>
+                ))}
+              </select>
+            </div>
 
-              <button className="w-full bg-black text-white py-3 mt-2">
+              <button className="w-full bg-black text-white py-3 col-span-2"
+              onClick={handleAddToBag}>
                 Add to Bag - ${product.price}
               </button>
             </div>

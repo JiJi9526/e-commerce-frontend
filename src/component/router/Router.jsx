@@ -9,6 +9,7 @@ import Men from '../../page/Men'
 import Underwear from '../../page/Underwear'
 import ProductDetail from '../../page/ProductDetail'
 import Review from '../../page/Review'
+import { Cart } from '../cart/Cart'
 
 const Router = () => {
   return (
@@ -25,6 +26,7 @@ const Router = () => {
                 <Route path='/review' element={<Review/>}/>
             </Routes>
           <Footer/>
+          <Cart/>
         </BrowserRouter>
     </div>
   )

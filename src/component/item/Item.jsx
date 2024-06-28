@@ -1,34 +1,39 @@
-import React, {useState} from 'react'
+import React, {useContext, useState} from 'react'
+import { CartContext } from '../cardContext/CartContext';
 
-export const Item = ({ img }) => {
-    const [count, setCount] = useState(1);
+export const Item = ({ item }) => {
+    const [count, setCount] = useState(item.quantity);
+    const {removeFromCart, updateQuantity} = useContext(CartContext);
 
     const increaseCount = () => {
-      setCount(count + 1);
+      const newCount = count + 1;
+      setCount(newCount);
+      updateQuantity(item.id, newCount);
     };
   
     const decreaseCount = () => {
       if (count > 1) {
-        setCount(count - 1);
+        const newCount = count - 1;
+        setCount(newCount);
+        updateQuantity(item.id, newCount);
       }
     };
 
   return (
     <div className='flex justify-between space-x-10 mb-10'>
         <div className='w-[30%] h-full'>
-            <img src={img} alt="" />
+            <img src={item.imageUrl} alt={item.name} />
         </div>
         <div className='flex flex-col justify-between w-[60%]'>
             <div>
-                <h2>Brushed Cotton Pull-On Shorts</h2>
+                <h2>{item.name}</h2>
                 <div className='flex space-x-2 text-gray-400'>
-                    <p>Ink</p>
+                    <p>{item.color}</p>
                     <p>|</p>
-                    <p>XL</p>
+                    <p>{item.size}</p>
                 </div>
                 <div className='flex space-x-2'>
-                    <p className='line-through text-gray-400'>$79.00</p>
-                    <p>$39.50</p>
+                    <p>${item.price}</p>
                 </div>
             </div>
             <div className='flex justify-between'>
@@ -38,7 +43,8 @@ export const Item = ({ img }) => {
                 <p>{count}</p>
                 <button onClick={increaseCount}>+</button>
                 </div>
-                <button className='underline'>Remove</button>
+                <button className='underline'
+                onClick={() => removeFromCart(item.id)}>Remove</button>
             </div>
             
         </div>

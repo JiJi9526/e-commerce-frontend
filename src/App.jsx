@@ -7,10 +7,10 @@ import Router from './component/router/Router'
 import Header from './component/header/Header'
 
 function App() {
-
+  const [cart, setCart] = useState([]);
   return (
     <div className=''>
-        <Router/>
+        <Router cart={cart} setCart={setCart}/>
     </div>
   )
 }
